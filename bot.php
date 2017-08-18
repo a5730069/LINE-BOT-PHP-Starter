@@ -19,9 +19,15 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 
-			
-				getMqttfromlineMsg($Text);
-			
+			 $pos = strpos($text, ":");
+			    if($pos){
+			      $splitMsg = explode(":", $text);
+			      $topic = $splitMsg[0];
+			      $msg = $splitMsg[1];
+			      getMqttfromlineMsg($msg);
+			    }else{
+				getMqttfromlineMsg($text);
+			    }
 			
 
 			$messages = [
@@ -51,4 +57,4 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-echo "OK1";
+echo "OK";
