@@ -7,12 +7,17 @@
   }
   function getMqttfromlineMsg($lineMsg){
  
-   include "httpful.phar";
-        // กำหนด uri
-        $uri = "https://api.netpie.io/microgear/jadetest/NodeMCU1?retain&auth=jJhs4OCpicDIGTT:kWNwUoBoEZenL50J2h8Th8XGT";
-        
-        // สั่งให้เรียก uri โดยใช้คำสั่ง GET เพื่อขออ่านค่าจาก netpie
-        $response = \Httpful\Request::put($uri)->send(1);
+    $pos = strpos($lineMsg, ":");
+    if($pos){
+      $splitMsg = explode(":", $lineMsg);
+      $topic = $splitMsg[0];
+      $msg = $splitMsg[1];
+      pubMqtt($topic,$msg);
+    }else{
+      $topic = "NodeMCU1";
+      $msg = $lineMsg;
+      pubMqtt($topic,$msg);
+    }
   }
  
   function put($url,$tmsg)
