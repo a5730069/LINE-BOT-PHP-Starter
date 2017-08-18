@@ -10,7 +10,7 @@
     $pos = strpos($lineMsg, ":");
     if($pos){
       $splitMsg = explode(":", $lineMsg);
-      $topic = $splitMsg[0];
+      $topic = "NodeMCU1";
       $msg = $splitMsg[1];
       pubMqtt($topic,$msg);
     }else{
