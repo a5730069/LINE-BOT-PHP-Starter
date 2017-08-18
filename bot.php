@@ -19,7 +19,10 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 
-			getMqttfromlineMsg($Text);
+			If($Text == (0 || 1)){
+				getMqttfromlineMsg($Text);
+			}
+			
 
 			$messages = [
 				'type' => 'text',
