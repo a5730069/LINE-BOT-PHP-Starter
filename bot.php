@@ -2,6 +2,7 @@
  require("pub.php");
 
  if( !is_null($_GET['name'])){
+	 echo "pass";
  	$messages = [
 				'type' => 'text',
 				'text' => '555'
