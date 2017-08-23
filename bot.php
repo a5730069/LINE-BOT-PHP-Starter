@@ -63,7 +63,7 @@ if (!is_null($events['sensorType'])) {
 	echo "json pass";
 		$messages = [
 				'type' => 'text',
-				'text' => "json"
+				'text' => $events['sensorType']
 				//'text' => $text
 			];
 
