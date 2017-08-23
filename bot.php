@@ -5,7 +5,7 @@ $access_token = 'qLip9omRdSnsaKFlsWmCCx9pdvAcRd1CGb6XfH/K3aKVgmHS4Eh/a35I8S1q8XV
 function send_data_LINE($text){
 	$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => '$text'
 				//'text' => $text
 			];
 
