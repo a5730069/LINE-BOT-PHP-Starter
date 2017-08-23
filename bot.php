@@ -70,8 +70,8 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['sensorType'])) {
 	echo "json pass";
-	//send_data_LINE($events['sensorType']);
-		$messages = [
+	send_data_LINE($events['sensorType']);
+		/*$messages = [
 				'type' => 'text',
 				'text' => $events['sensorType']
 				//'text' => $text
@@ -99,7 +99,7 @@ if (!is_null($events['sensorType'])) {
 			echo $result . "\r\n";
 		//}
 	//}
-//}
+//} */
 echo "OK";
 	}
 if (!is_null($events['events'])) {
@@ -130,3 +130,4 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK";
+?>
