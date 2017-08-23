@@ -2,10 +2,16 @@
  require("pub.php");
 $access_token = 'qLip9omRdSnsaKFlsWmCCx9pdvAcRd1CGb6XfH/K3aKVgmHS4Eh/a35I8S1q8XVCZQVJUVIPa2B/c1ZJHfEyA8vUgqlUeIfqTkw607IKQ7yCasUHW34wj+CGzB6bOafYNDSGkh87GIr+Tns7fqFqVAdB04t89/1O/w1cDnyilFU=';
 
-function send_data_LINE($text){
+// Get POST body content
+$content = file_get_contents('php://input');
+// Parse JSON
+
+$events = json_decode($content, true);
+// Validate parsed JSON data
+function send_data_LINE($data){
 	$messages = [
 				'type' => 'text',
-				'text' => '$text'
+				'text' => $data
 				//'text' => $text
 			];
 
@@ -81,17 +87,14 @@ echo "OK";
 }
 
 
-// Get POST body content
-$content = file_get_contents('php://input');
-// Parse JSON
-
-$events = json_decode($content, true);
-// Validate parsed JSON data
 if (!is_null($events['sensorType'])) {
 	echo "json pass";
-	$text = $events['sensorType'];
-	send_data_LINE($text);
+	send_data_LINE($events['sensorType']);
 		
+		//}
+	//}
+//}
+echo "OK";
 	}
 if (!is_null($events['events'])) {
 	echo "line bot";
