@@ -22,7 +22,7 @@ $access_token = 'qLip9omRdSnsaKFlsWmCCx9pdvAcRd1CGb6XfH/K3aKVgmHS4Eh/a35I8S1q8XV
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => '555'
+				'text' => $_GET['name']
 				//'text' => $text
 			];
 
