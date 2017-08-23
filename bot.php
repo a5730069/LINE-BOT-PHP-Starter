@@ -8,10 +8,10 @@ $content = file_get_contents('php://input');
 
 $events = json_decode($content, true);
 // Validate parsed JSON data
-function send_data_LINE($data){
+function send_data_LINE(){
 	$messages = [
 				'type' => 'text',
-				'text' => $data
+				'text' => $events['sensorType']
 				//'text' => $text
 			];
 
@@ -38,22 +38,6 @@ function send_data_LINE($data){
 }
  if( !is_null($_GET['name'])){
  
-// Get POST body content
-//$content = file_get_contents('php://input');
-// Parse JSON
-//$events = json_decode($content, true);
-// Validate parsed JSON data
-//if (!is_null($events['events'])) {
-	// Loop through each event
-	//foreach ($events['events'] as $event) {
-		// Reply only when message sent is in 'text' format
-		//if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
-			//$text = $event['message']['text'];
-			// Get replyToken
-			//$replyToken = $event['replyToken'];
-
-			// Build message to reply back
 			$messages = [
 				'type' => 'text',
 				'text' => $_GET['name']
@@ -89,8 +73,8 @@ echo "OK";
 
 if (!is_null($events['sensorType'])) {
 	echo "json pass";
-	//send_data_LINE($events['sensorType']);
-		$messages = [
+	send_data_LINE();
+		/*$messages = [
 				'type' => 'text',
 				'text' => $events['sensorType']
 				//'text' => $text
@@ -118,7 +102,7 @@ if (!is_null($events['sensorType'])) {
 			echo $result . "\r\n";
 		//}
 	//}
-//}
+//} */
 echo "OK";
 	}
 if (!is_null($events['events'])) {
