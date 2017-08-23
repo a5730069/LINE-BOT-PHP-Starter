@@ -8,10 +8,10 @@ $content = file_get_contents('php://input');
 
 $events = json_decode($content, true);
 // Validate parsed JSON data
-function send_data_LINE(){
+function send_data_LINE($msg){
 	$messages = [
 				'type' => 'text',
-				'text' => $events['sensorType']
+				'text' => $msg
 				//'text' => $text
 			];
 
@@ -73,7 +73,7 @@ echo "OK";
 
 if (!is_null($events['sensorType'])) {
 	echo "json pass";
-	send_data_LINE();
+	send_data_LINE($events['sensorType']);
 		/*$messages = [
 				'type' => 'text',
 				'text' => $events['sensorType']
