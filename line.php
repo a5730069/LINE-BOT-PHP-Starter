@@ -4,7 +4,7 @@
 function send_LINE($msg){
   $messages = [
         'type' => 'text',
-        'text' => $msg
+        'text' => '$msg'
         //'text' => $text
       ];
 
@@ -28,5 +28,6 @@ function send_LINE($msg){
       curl_close($ch);
 
       echo $result . "\r\n"; 
+ echo "2";
 }
 ?>
