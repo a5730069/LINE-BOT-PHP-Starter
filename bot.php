@@ -31,23 +31,6 @@ function send_data_LINE($data){
 			echo $result . "\r\n";
 }
  if( !is_null($_GET['name'])){
- 
-// Get POST body content
-//$content = file_get_contents('php://input');
-// Parse JSON
-//$events = json_decode($content, true);
-// Validate parsed JSON data
-//if (!is_null($events['events'])) {
-	// Loop through each event
-	//foreach ($events['events'] as $event) {
-		// Reply only when message sent is in 'text' format
-		//if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-			// Get text sent
-			//$text = $event['message']['text'];
-			// Get replyToken
-			//$replyToken = $event['replyToken'];
-
-			// Build message to reply back
 			$messages = [
 				'type' => 'text',
 				'text' => $_GET['name']
@@ -74,9 +57,7 @@ function send_data_LINE($data){
 			curl_close($ch);
 
 			echo $result . "\r\n";
-		//}
-	//}
-//}
+	
 echo "OK";
 }
 
