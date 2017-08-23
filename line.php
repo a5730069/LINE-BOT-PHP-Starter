@@ -1,10 +1,10 @@
  <?php
   $access_token = 'qLip9omRdSnsaKFlsWmCCx9pdvAcRd1CGb6XfH/K3aKVgmHS4Eh/a35I8S1q8XVCZQVJUVIPa2B/c1ZJHfEyA8vUgqlUeIfqTkw607IKQ7yCasUHW34wj+CGzB6bOafYNDSGkh87GIr+Tns7fqFqVAdB04t89/1O/w1cDnyilFU=';
 
-function send_LINE($send){
+function send_LINE($msg){
   $messages = [
         'type' => 'text',
-        'text' => $send
+        'text' => $msg
         //'text' => $text
       ];
 
@@ -27,6 +27,6 @@ function send_LINE($send){
       $result = curl_exec($ch);
       curl_close($ch);
 
-      echo $result . "\r\n";
+      echo $result . "\r\n"; 
 }
 ?>
