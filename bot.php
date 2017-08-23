@@ -102,6 +102,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-send_LINE("test");
-echo "OK2";
+echo "OK";
 ?>
